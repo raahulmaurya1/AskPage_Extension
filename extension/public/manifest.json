@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Intelligent Chatbot",
+  "version": "1.0.0",
+  "description": "AI assistant for websites",
+
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+
+  "background": {
+    "service_worker": "assets/background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["assets/content.js"]
+    }
+  ],
+
+  "action": {
+    "default_title": "Intelligent Chatbot"
+  },
+
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  }
+}

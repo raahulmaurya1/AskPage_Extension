@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((e,r,n)=>{if(e.action==="EXTRACT_PAGE"){console.log("EXTRACT_PAGE received in content script");const t=document.body.innerText.replace(/\s\s+/g," ").trim();return n({text:t,url:window.location.href}),!0}});
